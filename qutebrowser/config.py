@@ -37,7 +37,7 @@ c.colors.tabs.selected.odd.fg = "#ECEFF4"
 
 
 
-c.url.start_pages = "file:///home/atul/qute-homepage/index.html"
+c.url.start_pages = "file:///home/path_to_homepage/homepage.html"
 c.url.default_page = c.url.start_pages
 
 config.bind('J', 'tab-prev')

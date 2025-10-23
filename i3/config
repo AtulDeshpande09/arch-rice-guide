@@ -49,10 +49,18 @@ bindsym F3 exec pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym F2 exec pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# Brightness
-bindsym F5 exec --no-startup-id echo 10000 | sudo tee /sys/class/backlight/intel_backlight/brightness
-bindsym F4 exec --no-startup-id echo 3000 | sudo tee /sys/class/backlight/intel_backlight/brightness
 
+
+#### Brightness
+
+bindsym F5 exec brightnessctl set +10%
+bindsym F4 exec brightnessctl set 10%-
+
+## Blue Light
+# Warm tone
+bindsym $mod+F8 exec "redshift -O 5000K"
+# Reset tone
+bindsym $mod+F9 exec "redshift -x"
 
 
 
@@ -69,6 +77,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+#bindsym $win+Return exec alacritty
 
 
 # Apps
@@ -99,10 +108,9 @@ bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # Wallpaper
-exec --no-startup-id feh --bg-fill /home/atul/wallpapers/japan1.png
+exec --no-startup-id feh --bg-fill /home/atul/wallpapers/nordic-wallpapers/wallpapers/pixelcity.png
 
-# picom
-exec --no-startup-id picom -b
+
 
 
 # alternatively, you can use the cursor keys:
